@@ -1,14 +1,18 @@
 function solution(arr)
 {
+    let j = 0;
+    let answer = [];
     
-    for (let i = 0 ; i < arr.length ; i++){
+    answer.push(arr[0]);
+    
+    for (let i = 1 ; i < arr.length ; i++){
         
-        if (arr[i]===arr[i+1]){
+        if (answer[j]!== arr[i]){
             
-            arr.splice(i+1,1);
+            answer.push(arr[i]);
             
-            i = i-1;
+            j++;
         }
     }
-    return arr;
+    return answer;
 }
