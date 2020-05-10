@@ -1,34 +1,33 @@
 function solution(s) {
     
-    var answer = '';
+    let answer = '';
+    
+    let uni_arr = [];
     
     let a = 0;
     
     for (let i = 0 ; i < s.length ; i++) {
         
-        s.slice(i,i+1) = s.charCodeAt(i);
+        uni_arr[i] = s.charCodeAt(i);
         
     }
     
-    for (i = 0 ; i < s.length-1 ; i++) {
+    for (let j = 0 ; j < s.length-1 ; j++) {
         
-        for (let j = i+1 ; j < s.length ; j++) {
+        for (let f = j+1 ; f < s.length ; f++) {
             
-            if (s[i] < s[j]) {
+            if (uni_arr[j] < uni_arr[f]) {
                 
-                a = s[i];
-                s[i] = s[j];
-                s[j] = a;
+                a = uni_arr[j];
+                uni_arr[j] = uni_arr[f];
+                uni_arr[f] = a;
                 
             }
         }
     }
     
-    for (i = 0 ; i < s.length ; i++) {
-        
-        s[i] = s.fromCharCode(i);
-    }
-    answer = s;
-    
+    //
+    answer = uni_arr.fromCharCode(0,s.length);
+    // error
     return answer;
 }
