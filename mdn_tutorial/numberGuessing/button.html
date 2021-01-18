@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>start machine</button>
+    <p>the machine is stopped.</p>
+</body>
+<script>
+    const btn = document.querySelector('button');
+    const txt = document.querySelector('p');
+
+    btn.addEventListener('click', updateBtn);
+
+    function updateBtn(){
+        if (btn.textContent === 'start machine') {
+            btn.textContent = 'stop machine';
+            txt.textContent = 'the machine is starting';
+        } else {
+            btn.textContent = 'start machine';
+            txt.textContent = 'the machine is stopped'
+        }
+    }
+</script>
+</html>
